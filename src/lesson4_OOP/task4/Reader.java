@@ -16,6 +16,7 @@ public class Reader {
         this.phoneNumber = phoneNumber;
     }
 
+
     public void takeBook(int countBooks) {
         System.out.printf("%s took %d books\n", fullName, countBooks);
     }
