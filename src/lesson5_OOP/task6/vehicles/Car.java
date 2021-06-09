@@ -10,15 +10,16 @@ public class Car {
     private Driver driver;
     private Engine engine;
 
-    public Car(String mark, String classOfCar, int weight, String name, int exp,int power, int manufacturer) {
+    public Car(String mark, String classOfCar, int weight, Driver driver, Engine engine){
+               //String name, int exp,int power, int manufacturer) {
         this.mark = mark;
         this.classOfCar = classOfCar;
         this.weight = weight;
-        this.driver = new Driver(name,exp);
-        this.engine = new Engine(power,manufacturer);
+        this.driver = driver;
+                //new Driver(name,exp);
+        this.engine = engine;
+                //new Engine(power,manufacturer);
     }
-
-
     public void start(){
         System.out.println("Поехали");
     }
@@ -31,9 +32,17 @@ public class Car {
     public void turnLeft(){
         System.out.println("Поворот налево");
     }
-    private void printInfo(){
 
-
+    public void printInfo(){
+        System.out.println("Car{" +
+                "mark='" + mark + '\'' +
+                ", classOfCar='" + classOfCar + '\'' +
+                ", weight=" + weight +
+                ", driverName='" + driver.getName() +'\''+
+                ", driverExp=" + driver.getExp() +
+                ", enginePower=" + engine.getPower() +
+                ", engineManufacturer='" + engine.getManufacturer() +'\''+
+                '}');
     }
 
 }

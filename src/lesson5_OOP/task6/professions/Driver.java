@@ -5,7 +5,6 @@ public class Driver {
     private int exp;
 
     public Driver(){
-
     }
 
     public Driver(String name, int exp) {

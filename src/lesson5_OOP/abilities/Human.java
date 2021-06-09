@@ -2,13 +2,10 @@ package lesson5_OOP.abilities;
 
 public class Human {
      private String name;
-     private Ability ability = new Ability();
+     private Ability ability;
 
-     public void setAbilityFirst(String first){
-          ability.setFirst(first);
-     }
-     public void setAbilitySecond(String second){
-          ability.setSecond(second);
+     public void setAbilities(String first,String second){
+          this.ability = new Ability(first,second);
      }
      public String getName() {
           return name;

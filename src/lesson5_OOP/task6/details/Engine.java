@@ -2,13 +2,13 @@ package lesson5_OOP.task6.details;
 
 public class Engine {
     private int power;
-    private int manufacturer;
+    private String manufacturer;
 
     public Engine(){
 
     }
 
-    public Engine(int power, int manufacturer) {
+    public Engine(int power, String manufacturer) {
         this.power = power;
         this.manufacturer = manufacturer;
     }
@@ -21,11 +21,11 @@ public class Engine {
         this.power = power;
     }
 
-    public int getManufacturer() {
+    public String getManufacturer() {
         return manufacturer;
     }
 
-    public void setManufacturer(int manufacturer) {
+    public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }
 }

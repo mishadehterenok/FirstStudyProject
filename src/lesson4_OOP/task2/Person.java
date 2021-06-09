@@ -1,23 +1,16 @@
 package lesson4_OOP.task2;
 
-public class Person {
-    private String fullName;
+import lesson5_OOP.task6.professions.Driver;
+
+public class Person extends Driver {
     private int age;
 
     public Person() {
     }
 
-    public Person(String fullName, int age) {
-        this.fullName = fullName;
+    public Person(String name,int exp, int age) {
+        super(name,exp);
         this.age = age;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
     }
 
     public int getAge() {
@@ -29,10 +22,10 @@ public class Person {
     }
 
     public void move(){
-        System.out.println(fullName + ", "+age+" лет, идет.");
+        System.out.println(getName() + ", "+age+" лет, идет.");
     }
     public void talk(){
-        System.out.println(fullName + ", "+age+" лет, говорит.");
+        System.out.println(getName() + ", "+age+" лет, говорит.");
     }
 
 }
