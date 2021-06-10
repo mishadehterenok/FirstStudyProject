@@ -1,6 +1,6 @@
 package lesson4_OOP.task2;
 
-import lesson5_OOP.task6.professions.Driver;
+import lesson5_6_7_OOP.task6.professions.Driver;
 
 public class Person extends Driver {
     private int age;
