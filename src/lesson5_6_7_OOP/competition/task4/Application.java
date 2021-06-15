@@ -7,9 +7,9 @@ public class Application {
         Clothes skirt = new Skirt(34,90,"Blue","Skirt");
         Clothes tie = new Tie(40,30,"Brown","Tie");
         Clothes [] clothes = {pants,tshirt,skirt,tie};
-        (new Atelier()).dressWomen(clothes);
+        Atelier.dressWomen(clothes);
         System.out.println();
-        (new Atelier()).dressMen(clothes);
+        Atelier.dressMen(clothes);
 
         ((Pants)pants).dressMen();
         ((Skirt)skirt).dressWomen();
