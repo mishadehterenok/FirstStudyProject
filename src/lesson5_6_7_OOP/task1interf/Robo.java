@@ -30,14 +30,32 @@ public class Robo implements Robot {
     public void setLeg(Leg leg) {
         this.leg = leg;
     }
+    static int  count = 1;
     @Override
     public void action(){
+
+        System.out.println("Робот #" + count);
         head.speak();
         leg.step();
         hand.upHand();
+        count++;
     }
     @Override
     public int getPrice(){
         return head.getPrice() + leg.getPrice() + hand.getPrice();
+    }
+
+    public static void getMaxPrice(Robo[] robots){
+        int max = robots[0].getPrice();
+        for (int i = 0; i <robots.length ; i++) {
+            if (max < robots[i].getPrice()){
+                max = robots[i].getPrice();
+            }
+        }
+        for (int i = 0; i <robots.length ; i++) {
+            if (max == robots[i].getPrice()){
+                System.out.printf("Самый дорогой робот #%d, его цена = %d\n",i+1,max);
+            }
+        }
     }
 }
