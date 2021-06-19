@@ -23,7 +23,7 @@ public class BrokenCarException extends Exception{
     public String toString() {
         return "BrokenCarException: " +
                 getMessage() +
-                "number = " + number +
-                ", model: '" + model + '\'' ;
+                "random number = " + number +
+                ", model: '" + model + '\'';
     }
 }
