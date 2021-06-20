@@ -11,14 +11,6 @@ public class BrokenCarException extends Exception{
         this.model = mod;
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
     @Override
     public String toString() {
         return "BrokenCarException: " +
