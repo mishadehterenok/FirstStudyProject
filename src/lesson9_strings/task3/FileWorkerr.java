@@ -3,7 +3,7 @@ package lesson9_strings.task3;
 import java.io.*;
 import java.util.Scanner;
 
-public class FileWorker {
+public class FileWorkerr {
     public static void main(String[] args) {
         final String DIRECTORY = "src" + File.separator + "lesson9_strings" + File.separator + "task3" + File.separator;
         File newFile = new File(DIRECTORY + "NewFile.txt");
