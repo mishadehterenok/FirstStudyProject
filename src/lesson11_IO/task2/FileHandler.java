@@ -31,8 +31,8 @@ public class FileHandler {
         String[] words = line.split("\\s*(\\s|,|–|:|;)\\s*");
         if (words.length < 3 || words.length > 5) {
             return false;
-        } else
-            return true;
+        }
+        return true;
     }
 
 
