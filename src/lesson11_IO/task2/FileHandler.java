@@ -7,32 +7,34 @@ public class FileHandler {
         StringBuilder builder = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             while (reader.ready()) {
-                builder.append(reader.readLine());
+                builder.append(reader.readLine()).append(" ");
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String[] split = builder.toString().split("\\s*(,|!|\\?|...|\\.)\\s*");
-        return split;
+        return builder.toString().split("\\s?[.!?…]\\s*");
     }
 
-    public static boolean HavePalindrome(String line) {
-        StringBuilder builder = new StringBuilder(line);
-        String[] stringArr = line.split("\\s*(\\s|,|–|:|;)\\s*");
-        for (String word : stringArr) {
-            if (word.equalsIgnoreCase(builder.reverse().toString())) {
+    public static boolean HavePalindrome(String sentence) {
+        boolean id = false;
+        String[] words = sentence.split("\\s?[,–:;\"]?\\s");
+        for (String word : words) {
+            StringBuilder builder = new StringBuilder(word);
+            if ((word.equalsIgnoreCase(builder.reverse().toString())) && (word.length() > 1)) {
+                id = true;
                 break;
             }
         }
-        return true;
+        return id;
     }
 
-    public static boolean RightCountOfWords(String line) {
-        String[] words = line.split("\\s*(\\s|,|–|:|;)\\s*");
-        if (words.length < 3 || words.length > 5) {
-            return false;
+    public static boolean RightCountOfWords(String sentence) {
+        boolean id = false;
+        String[] words = sentence.split("\\s?[,–:;\"]?\\s");
+        if ((words.length >= 3) && (words.length <= 5)) {
+            id = true;
         }
-        return true;
+        return id;
     }
 
 
