@@ -1,0 +1,21 @@
+N   ID     NAME          PRICE    INFORMATION
+1   151   "Sony PS5"     1300     BEST_SELLER
+2   154   "Sony PS4"     1100     REGULAR
+3   598   "Sony PS3"     900      BEST_SELLER
+4   659   "IPhone 13"    1700     SPECIAL
+5   478   "IPhone 12"    1500     REGULAR
+6   214   "IPhone 11"    1300     BEST_SELLER
+7   159   "IPhone X"     1100     SPECIAL
+8   879   "IPhone XR"    1000     REGULAR
+9   214   "IPhone XS"    1100     BEST_SELLER
+10  458   "IPhone 8"     800      SPECIAL
+11  559   "IPhone 7"     600      REGULAR
+12  996   "DVD"          400      BEST_SELLER
+13  865   "Sony TV"      2000     SPECIAL
+14  974   "XBox One"     1000     REGULAR
+15  882   "Samsung S20"  1000     BEST_SELLER
+16  347   "Sony Exp"     500      SPECIAL
+17  731   "Nokia"        300      REGULAR
+18  577   "Huawei"       450      BEST_SELLER
+19  130   "Samsung Buds" 200      SPECIAL
+20  441   "AirPods Pro"  250      REGULAR
