@@ -13,7 +13,7 @@ public class Control {
         System.out.println("Введите необходимую команду из списка:\n" +
                 "- 'Добавить все продукты'\n" +
                 "- 'Создать список' (создается новый список продуктов)\n" +
-                "- 'Добавить продукты' (добавляются в конец списка)" +
+                "- 'Добавить продукты' (добавляются в конец списка)\n" +
                 "- 'Удалить все продукты'\n" +
                 "- 'Удалить продукты' (удаляются выбранные продукты, а остальные сортируются по-новому)\n" +
                 "(Для выхода введите 'ВЫХОД')\n");
@@ -54,11 +54,13 @@ public class Control {
             } else if (mainCommand.equalsIgnoreCase("Создать список")) {
                 System.out.println("Введите номера продуктов из файла 'productList.txt' для добавления (для выхода введите 0)");
                 List<Integer> intList = readNumbers();
+                scanner.nextLine();
                 sortDescription();
                 writeDescription();
-                scanner.nextLine();
-                String line = scanner.nextLine();
+                //String line = scanner.nextLine();
                 while (true) {
+                    N = 1;
+                    String line = scanner.nextLine();
                     if (line.equalsIgnoreCase("По идентификатору")) {
                         writeProducts(SortByID(makeProductList(makeSpecialSetOfProducts(readFile(), intList))));
                         success();
@@ -100,7 +102,7 @@ public class Control {
                 removeProducts(readNumbers());
                 System.out.println("Выбранные продукты удалены");
                 scanner.nextLine();
-            } else if (mainCommand.equalsIgnoreCase("Выход")) {
+            } else if (mainCommand.equalsIgnoreCase("ВЫХОД")) {
                 scanner.close();
                 break;
             } else {
@@ -118,8 +120,8 @@ public class Control {
     }
 
     public static void sortDescription() {
-        System.out.println("Каким способом хотите отсортировать продукты?\n Доступны:\n" +
-                "- По идентификатору\n- По названию\n- По цене\n- По типу\n- Не сортировать (в порядке добавления)\n");
+        System.out.println("Каким способом хотите отсортировать продукты?\n Доступные команды:\n" +
+                "- 'По идентификатору'\n- 'По названию'\n- 'По цене'\n- 'По типу'\n- 'Не сортировать' (в порядке добавления)\n");
     }
 
     public static List<Integer> readNumbers() {

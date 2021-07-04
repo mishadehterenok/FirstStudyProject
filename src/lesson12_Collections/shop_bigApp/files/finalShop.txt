@@ -1,3 +1,6 @@
-N   ID     NAME          PRICE    INFORMATION
-1   865   Sony_TV        2000     SPECIAL
-2   974   XBox_One       1000     REGULAR
+N   ID    NAME           PRICE    INFORMATION
+1   154   Sony_PS4       1100     REGULAR
+2   598   Sony_PS3       900      BEST_SELLER
+3   659   IPhone_13      1700     SPECIAL
+4   478   IPhone_12      1500     REGULAR
+5   288   IPhone_11      1300     BEST_SELLER

@@ -61,8 +61,8 @@ public class Action {
         }
     }
     public static void writeDescription() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(DIRECTORY + "finalShop.txt", true))) {
-            writer.write(description + "\n");
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(DIRECTORY + "finalShop.txt"))) {
+            writer.write("N   ID    NAME           PRICE    INFORMATION\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
