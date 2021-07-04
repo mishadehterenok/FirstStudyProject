@@ -2,15 +2,11 @@ package lesson12_Collections.shop_bigApp.utilities;
 
 import java.util.Objects;
 
-public class Product implements Comparable<Product> {
-    private int number;
-    private int id;
+public class Product {
+    private final int id;
     private String name;
     private int price;
     Type type;
-
-    public Product(Integer integer) {
-    }
 
     public Product(int id, String name, int price, Type type) {
         this.id = id;
@@ -21,10 +17,6 @@ public class Product implements Comparable<Product> {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -51,14 +43,6 @@ public class Product implements Comparable<Product> {
         this.type = type;
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
     public static String printSpaces(int num){
         StringBuilder builder = new StringBuilder();
         for (int i = 1; i <=num; i++) {
@@ -80,16 +64,11 @@ public class Product implements Comparable<Product> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return id == product.id;
+        return id == product.id && Objects.equals(name, product.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
-    public int compareTo(Product o) {
-        return Integer.compare(getId(), o.getId());
+        return Objects.hash(id, name);
     }
 }

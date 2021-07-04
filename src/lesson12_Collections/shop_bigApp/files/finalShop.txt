@@ -1,6 +1,7 @@
 N   ID    NAME           PRICE    INFORMATION
-1   154   Sony_PS4       1100     REGULAR
-2   598   Sony_PS3       900      BEST_SELLER
-3   659   IPhone_13      1700     SPECIAL
-4   478   IPhone_12      1500     REGULAR
-5   288   IPhone_11      1300     BEST_SELLER
+1   151   Sony_PS5       1300     BEST_SELLER
+2   154   Sony_PS4       1100     REGULAR
+3   598   Sony_PS3       900      BEST_SELLER
+4   659   IPhone_13      1700     SPECIAL
+5   478   IPhone_12      1500     REGULAR
+6   288   IPhone_11      1300     BEST_SELLER

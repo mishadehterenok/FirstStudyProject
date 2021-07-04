@@ -25,23 +25,19 @@ public class Control {
                 while (true) {
                     String line = scanner.nextLine();
                     if (line.equalsIgnoreCase("По идентификатору")) {
-                        writeProducts(SortByID(makeProductList(readFile())));
+                        writeProducts(SortByID(makeProductList(readFile())),true);
                         allSuccess();
                         break;
                     } else if (line.equalsIgnoreCase("По названию")) {
-                        writeProducts(SortByName(makeProductList(readFile())));
+                        writeProducts(SortByName(makeProductList(readFile())),true);
                         allSuccess();
                         break;
                     } else if (line.equalsIgnoreCase("По цене")) {
-                        writeProducts(SortByPrice(makeProductList(readFile())));
-                        allSuccess();
-                        break;
-                    } else if (line.equalsIgnoreCase("По типу")) {
-                        writeProducts(SortByType(makeProductList(readFile())));
+                        writeProducts(SortByPrice(makeProductList(readFile())),true);
                         allSuccess();
                         break;
                     } else if (line.equalsIgnoreCase("Не сортировать")) {
-                        writeProducts(makeProductList(readFile()));
+                        writeProducts(makeProductList(readFile()),true);
                         allSuccess();
                         break;
                     } else if (line.equalsIgnoreCase("Выход")) {
@@ -52,33 +48,28 @@ public class Control {
                     }
                 }
             } else if (mainCommand.equalsIgnoreCase("Создать список")) {
-                System.out.println("Введите номера продуктов из файла 'productList.txt' для добавления (для выхода введите 0)");
+                System.out.println("Введите номера продуктов из исходного файла для добавления (для выхода введите 0)");
                 List<Integer> intList = readNumbers();
                 scanner.nextLine();
                 sortDescription();
                 writeDescription();
-                //String line = scanner.nextLine();
                 while (true) {
                     N = 1;
                     String line = scanner.nextLine();
                     if (line.equalsIgnoreCase("По идентификатору")) {
-                        writeProducts(SortByID(makeProductList(makeSpecialSetOfProducts(readFile(), intList))));
+                        writeProducts(SortByID(makeProductList(makeSpecialSetOfProducts(readFile(), intList))),true);
                         success();
                         break;
                     } else if (line.equalsIgnoreCase("По названию")) {
-                        writeProducts(SortByName(makeProductList(makeSpecialSetOfProducts(readFile(), intList))));
+                        writeProducts(SortByName(makeProductList(makeSpecialSetOfProducts(readFile(), intList))),true);
                         success();
                         break;
                     } else if (line.equalsIgnoreCase("По цене")) {
-                        writeProducts(SortByPrice(makeProductList(makeSpecialSetOfProducts(readFile(), intList))));
+                        writeProducts(SortByPrice(makeProductList(makeSpecialSetOfProducts(readFile(), intList))),true);
                         success();
                         break;
-                    } else if (line.equalsIgnoreCase("По типу")) {
-                        writeProducts(SortByType(makeProductList(makeSpecialSetOfProducts(readFile(), intList))));
-                        success();
-                        break;
-                    } else if (line.equalsIgnoreCase("Не сортировать")) {
-                        writeProducts(makeProductList(makeSpecialSetOfProducts(readFile(), intList)));
+                    }  else if (line.equalsIgnoreCase("Не сортировать")) {
+                        writeProducts(makeProductList(makeSpecialSetOfProducts(readFile(), intList)),true);
                         success();
                         break;
                     } else if (line.equalsIgnoreCase("Выход")) {
@@ -89,16 +80,16 @@ public class Control {
                     }
                 }
             } else if (mainCommand.equalsIgnoreCase("Добавить продукты")) {
-                System.out.println("Введите номера продуктов из файла 'productList.txt' для добавления (для выхода введите 0)");
+                System.out.println("Введите номера продуктов из исходного файла для добавления (для выхода введите 0)");
                 List<Integer> intList = readNumbers();
                 scanner.nextLine();
-                writeProducts(makeProductList(makeSpecialSetOfProducts(readFile(), intList)));
+                writeProducts(makeProductList(makeSpecialSetOfProducts(readFile(), intList)),true);
                 success();
             } else if (mainCommand.equalsIgnoreCase("Удалить все продукты")) {
                 removeAllProducts();
                 System.out.println("Все продукты удалены");
             } else if (mainCommand.equalsIgnoreCase("Удалить продукты")) {
-                System.out.println("Введите номера продуктов для удаления (для выхода введите 0)");
+                System.out.println("Введите номера продуктов для удаления из нового файла (для выхода введите 0)");
                 removeProducts(readNumbers());
                 System.out.println("Выбранные продукты удалены");
                 scanner.nextLine();
@@ -121,7 +112,7 @@ public class Control {
 
     public static void sortDescription() {
         System.out.println("Каким способом хотите отсортировать продукты?\n Доступные команды:\n" +
-                "- 'По идентификатору'\n- 'По названию'\n- 'По цене'\n- 'По типу'\n- 'Не сортировать' (в порядке добавления)\n");
+                "- 'По идентификатору'\n- 'По названию'\n- 'По цене'\n- 'Не сортировать' (в порядке добавления)\n");
     }
 
     public static List<Integer> readNumbers() {
