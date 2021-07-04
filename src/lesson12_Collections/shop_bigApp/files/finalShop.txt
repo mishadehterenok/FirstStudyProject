@@ -1,5 +1,3 @@
 N   ID     NAME          PRICE    INFORMATION
-4   214   IPhone XS      1100     BEST_SELLER
-5   288   IPhone 11      1300     BEST_SELLER
-6   441   AirPods Pro    250      REGULAR
-7   598   Sony PS3       900      BEST_SELLER
+1   865   Sony_TV        2000     SPECIAL
+2   974   XBox_One       1000     REGULAR
