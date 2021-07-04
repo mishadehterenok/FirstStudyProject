@@ -1,1 +1,5 @@
 N   ID     NAME          PRICE    INFORMATION
+4   214   IPhone XS      1100     BEST_SELLER
+5   288   IPhone 11      1300     BEST_SELLER
+6   441   AirPods Pro    250      REGULAR
+7   598   Sony PS3       900      BEST_SELLER

@@ -72,7 +72,7 @@ public class Product implements Comparable<Product> {
         int a = 4 - String.valueOf(Action.N).length();
         int b = 15 - getName().length();
         int c = 9 - String.valueOf(getPrice()).length();
-        return printSpaces(a) + id +"%3s" + name + printSpaces(b) + price + printSpaces(c) + type;
+        return printSpaces(a) + id +"   " + name + printSpaces(b) + price + printSpaces(c) + type;
     }
 
     @Override

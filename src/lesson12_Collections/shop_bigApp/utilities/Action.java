@@ -11,14 +11,13 @@ import java.util.List;
 
 public class Action {
     public static int N = 1;
-    private static List<Product> shopList;
     public static final String DIRECTORY = "src" + File.separator + "lesson12_Collections" + File.separator +
             "shop_bigApp" + File.separator + "files" + File.separator;
 
     public static String[] readFile() {
         StringBuilder builder = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(DIRECTORY + "productList.txt"));
-             BufferedWriter writer = new BufferedWriter(new FileWriter(DIRECTORY + "finalShop.txt"))) {
+             BufferedWriter writer = new BufferedWriter(new FileWriter(DIRECTORY + "finalShop.txt",true))) {
             final String description = reader.readLine();
             while (reader.ready()) {
                 builder.append(reader.readLine()).append("\n");
@@ -35,7 +34,7 @@ public class Action {
         int i = 0;
         String[] result = new String[numbers.size()];
         for (int num : numbers) {
-            result[i] = allProducts[num];
+            result[i] = allProducts[num-1];
             i++;
         }
         return result;
@@ -43,12 +42,12 @@ public class Action {
 
 
     public static List<Product> makeProductList(String[] lines) {
-        shopList = new ArrayList<>();
-        for (String line : lines) {
-            String[] elements = line.split("\\s+");
-            Product product = new Product(Integer.parseInt(elements[1]), elements[2], Integer.parseInt(elements[3]), Type.valueOf(elements[4]));
-            shopList.add(product);
-        }
+        List<Product> shopList = new ArrayList<>();
+            for (String line : lines) {
+                String[] elements = line.split("\\s{2,}");
+                Product product = new Product(Integer.parseInt(elements[1]), elements[2], Integer.parseInt(elements[3]), Type.valueOf(elements[4]));
+                shopList.add(product);
+            }
         return shopList;
     }
 
@@ -84,10 +83,11 @@ public class Action {
         }
     }
     public static void removeAllProducts() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(DIRECTORY + "finalShop.txt"));
+        try (BufferedReader reader = new BufferedReader(new FileReader(DIRECTORY + "productList.txt"));
              BufferedWriter writer = new BufferedWriter(new FileWriter(DIRECTORY + "finalShop.txt"))) {
             final String description = reader.readLine();
             writer.write(description + "\n");
+            N = 1;
         } catch (IOException e) {
             e.printStackTrace();
         }
