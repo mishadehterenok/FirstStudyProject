@@ -2,7 +2,6 @@ package lesson13_14_lambda_sream.less;
 
 import java.util.Objects;
 import java.util.Set;
-import java.util.stream.Stream;
 
 public class Employee {
     private String name;
@@ -52,11 +51,10 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
+        return
+                name.toUpperCase() +
                 ", age=" + age +
-                ", jobSet=" + jobSet +
-                '}';
+                ", " + jobSet;
     }
 
     @Override

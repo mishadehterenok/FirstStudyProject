@@ -29,10 +29,8 @@ public class Job {
 
     @Override
     public String toString() {
-        return "Job{" +
-                "name='" + name + '\'' +
-                ", salary=" + salary +
-                '}';
+        return
+                name + " - " + salary;
     }
 
     @Override
