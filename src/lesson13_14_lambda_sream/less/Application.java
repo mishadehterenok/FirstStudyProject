@@ -65,18 +65,14 @@ public class Application {
                 .map(Employee::getJobSet)
                 //.flatMap(jobSet -> jobSet.stream())
                 //.mapToInt(job -> job.getSalary())
-                .mapToInt(jobSet -> sum(jobSet))
+                .mapToInt(Employee::sumSalaries)
                 .summaryStatistics();
-        System.out.printf("Statistic: max = %d, min = %d, average = %f, sum = %d", statistics.getMax(),statistics.getMin(),statistics.getAverage(),statistics.getSum());
+        System.out.printf("Statistic: max = %d, min = %d, average = %f, sum = %d",
+                statistics.getMax(),statistics.getMin(),statistics.getAverage(),statistics.getSum());
+        System.out.println();
 
 
 
-    }
-    public static int  sum (Set<Job> jobSet){
-        int sum = 0;
-        for(Job i: jobSet){
-            sum+=i.getSalary();
-        }
-        return sum;
+
     }
 }

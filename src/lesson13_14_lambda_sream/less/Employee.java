@@ -42,6 +42,14 @@ public class Employee {
         this.jobSet = jobSet;
     }
 
+    public static int sumSalaries (Set<Job> jobSet){
+        int sum = 0;
+        for(Job i: jobSet){
+            sum+=i.getSalary();
+        }
+        return sum;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
