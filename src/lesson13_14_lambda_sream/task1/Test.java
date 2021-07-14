@@ -1,4 +1,4 @@
-package lesson13_14_lambda_sream.task;
+package lesson13_14_lambda_sream.task1;
 
 import java.util.Arrays;
 import java.util.Comparator;

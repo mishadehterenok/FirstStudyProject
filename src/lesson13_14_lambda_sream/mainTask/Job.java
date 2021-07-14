@@ -1,4 +1,4 @@
-package lesson13_14_lambda_sream.less;
+package lesson13_14_lambda_sream.mainTask;
 
 import java.util.Objects;
 

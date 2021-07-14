@@ -1,8 +1,7 @@
-package lesson13_14_lambda_sream.less;
+package lesson13_14_lambda_sream.mainTask;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Application {
     public static void main(String[] args) {
@@ -112,6 +111,16 @@ public class Application {
                 .collect(Collectors.groupingBy(Job::getName, Collectors.summingInt(Job::getSalary)));
         for(Map.Entry<String, Integer> entry: group.entrySet()){
             System.out.println(entry.getKey() + " = " + entry.getValue());
+        }
+        System.out.println();
+
+        Map<String, List<String>> collect = empList.stream()
+                .collect(Collectors.toMap(Employee::getName, emp -> emp.getJobSet()
+                        .stream()
+                        .map(Job::getName)
+                        .collect(Collectors.toList())));
+        for(Map.Entry<String, List<String>> entry: collect.entrySet()){
+            System.out.println(entry.getKey() + ": " + entry.getValue());
         }
 
 
