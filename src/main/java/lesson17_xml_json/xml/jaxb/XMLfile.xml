@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<group>
+    <name>Test Group 1</name>
+    <members>
+        <person>
+            <firstName>Denis</firstName>
+            <lastName>Derka</lastName>
+        </person>
+        <person>
+            <firstName>Vasya</firstName>
+            <lastName>Kima</lastName>
+        </person>
+    </members>
+</group>
