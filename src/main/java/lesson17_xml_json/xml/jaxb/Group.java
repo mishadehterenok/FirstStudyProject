@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//@XmlType(propOrder = {"name","members"}, name = "group")
+@XmlType(propOrder = {"name","members"})
 @XmlRootElement(name = "group")
 @XmlAccessorType(XmlAccessType.FIELD)
 

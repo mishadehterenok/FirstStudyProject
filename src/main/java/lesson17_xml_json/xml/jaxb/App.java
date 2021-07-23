@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.time.LocalDate;
 
 public class App {
     public static void main(String[] args) {
@@ -20,8 +21,8 @@ public class App {
     public static Group createGroup() {
         Group group = new Group();
         group.setName("Test Group 1");
-        group.getMembers().add(new Person("Denis", "Derka"));
-        group.getMembers().add(new Person("Vasya", "Kima"));
+        group.getMembers().add(new Person("Denis", "Derka", LocalDate.of(2000,12, 5)));
+        group.getMembers().add(new Person("Vasya", "Kima",LocalDate.of(1999,7,10)));
         return group;
     }
 

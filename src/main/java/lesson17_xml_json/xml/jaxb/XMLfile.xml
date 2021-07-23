@@ -5,10 +5,12 @@
         <person>
             <firstName>Denis</firstName>
             <lastName>Derka</lastName>
+            <birthDay>2000-12-05</birthDay>
         </person>
         <person>
             <firstName>Vasya</firstName>
             <lastName>Kima</lastName>
+            <birthDay>1999-07-10</birthDay>
         </person>
     </members>
 </group>
