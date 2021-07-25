@@ -1,0 +1,17 @@
+[
+  {
+    "color":"yellow",
+    "type":"renault",
+    "comfort":"COMPACT"
+  },
+  {
+    "color":"green",
+    "type":"porsche",
+    "comfort":"LUX"
+  },
+  {
+    "color":"red",
+    "type":"bmw",
+    "comfort":"SPORT"
+  }
+]
