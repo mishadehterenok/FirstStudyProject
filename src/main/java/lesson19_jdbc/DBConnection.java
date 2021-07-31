@@ -7,11 +7,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class DBconnection {
+public class DBConnection {
 
     public static Connection getConnection() throws SQLException {
         Properties properties = new Properties();
-        try(InputStream inputStream = DBconnection.class.getClassLoader()
+        try(InputStream inputStream = DBConnection.class.getClassLoader()
                 .getResourceAsStream("db.properties")){
             properties.load(inputStream);
         } catch (IOException e) {
@@ -21,8 +21,12 @@ public class DBconnection {
         String userName = properties.getProperty("db.username");
         String password = properties.getProperty("db.password");
         String driver = properties.getProperty("db.driver");
-//        Если ругается на драйвер нужно написать:
-//        Class.forName(driver);
+//   Если ругается на драйвер нужно написать:
+        try {
+            Class.forName(driver);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         return DriverManager.getConnection(url,userName,password);
     }
