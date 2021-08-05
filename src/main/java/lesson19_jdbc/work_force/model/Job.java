@@ -1,5 +1,7 @@
 package lesson19_jdbc.work_force.model;
 
+import java.util.Objects;
+
 public class Job {
     private int id;
     private String name;
@@ -50,5 +52,18 @@ public class Job {
                 ", name='" + name + '\'' +
                 ", salary=" + salary +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Job job = (Job) o;
+        return salary == job.salary && Objects.equals(name, job.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, salary);
     }
 }

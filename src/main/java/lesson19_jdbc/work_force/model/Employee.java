@@ -16,6 +16,11 @@ public class Employee {
         this.jobList = jobList;
     }
 
+    public Employee(String fullName, List<Job> jobList) {
+        this.fullName = fullName;
+        this.jobList = jobList;
+    }
+
     public Employee(int id, String fullName) {
         this.id = id;
         this.fullName = fullName;
